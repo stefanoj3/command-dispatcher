@@ -1,0 +1,26 @@
+name: CI
+on: [push]
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    name: "Tests"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Start docker env
+        run: make devenv-setup
+
+      - name: Run codestyle and static code analyzer
+        run: make check
+
+      - name: Tests
+        run: CI=true make phpunit
+
+      - name: Coverage upload
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          fail_ci_if_error: false
