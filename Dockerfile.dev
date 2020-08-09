@@ -1,0 +1,7 @@
+FROM php:7.4.9-zts-alpine3.12
+
+RUN apk add --update alpine-sdk autoconf composer
+
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
+WORKDIR /app

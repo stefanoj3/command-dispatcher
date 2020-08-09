@@ -1,0 +1,27 @@
+{
+    "name": "esse/command-dispatcher",
+    "description": "Command Dispatcher",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefano Gabryel",
+            "email": "esse.gab2@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "psr/container": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "vimeo/psalm": "^3.12",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "slevomat/coding-standard": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "CommandDispatcher\\": "src/"
+        }
+    }
+}
