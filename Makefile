@@ -34,7 +34,7 @@ check: phpcs psalm
 devenv-setup:
 	@echo "Starting development environment ~"
 	@docker-compose up -d
-	@docker-compose exec -T php composer install
+	@docker-compose exec -T -u $$(id -u) php composer install
 
 .PHONY: phpunit
 ## phpunit: run test suite inside the php container. To get a test report in the build/ folder set COVREPORT=true - EG COVREPORT=true make phpunit
