@@ -16,7 +16,7 @@ jobs:
         run: make check
 
       - name: Tests
-        run: CI=true make phpunit
+        run: CI=true make phpunitall
 
       - name: Coverage upload
         uses: codecov/codecov-action@v1
