@@ -23,7 +23,6 @@ class CommandDispatcherTest extends TestCase
     public function shouldResolveHandler()
     {
         $command = new class () {
-
         };
 
         $handler = new class () {
@@ -57,12 +56,10 @@ class CommandDispatcherTest extends TestCase
     public function shouldThrowWhenHandlerIsNotValid()
     {
         $command = new class () {
-
         };
 
         // no handle method
         $handler = new class () {
-
         };
 
         $handlerName = get_class($handler);
@@ -89,7 +86,6 @@ class CommandDispatcherTest extends TestCase
     public function shouldThrowWhenNoHandlerNameIsMapped()
     {
         $command = new class () {
-
         };
 
         $container = $this->prophesize(ContainerInterface::class);
@@ -110,7 +106,6 @@ class CommandDispatcherTest extends TestCase
     public function shouldThrowWhenTheMappingIsInvalid()
     {
         $command = new class () {
-
         };
 
         $container = $this->prophesize(ContainerInterface::class);
@@ -133,7 +128,6 @@ class CommandDispatcherTest extends TestCase
     public function shouldThrowWhenTheHandlerIsNotAvailableInTheContainer()
     {
         $command = new class () {
-
         };
 
         $container = $this->prophesize(ContainerInterface::class);
